@@ -1,0 +1,5 @@
+.env
+nyc_taxi.db
+yellow_tripdata_2025-01.parquet
+yellow_tripdata_cleaned.parquet
+.ipynb_checkpoints/
