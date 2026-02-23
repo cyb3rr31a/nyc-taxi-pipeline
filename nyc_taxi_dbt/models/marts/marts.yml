@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: trips_daily
+    description: "Total trips and average fare aggregated by day"
+    columns:
+      - name: trip_date
+        description: "The date of the trips"
+        tests:
+          - not_null
+          - unique
+      - name: total_trips
+        description: "Total number of trips on that day"
+      - name: avg_fare
+        description: "Average base fare in USD"
+      - name: avg_distance
+        description: "Average trip distance in miles"
+
+  - name: trips_by_hour
+    description: "Total trips and average fare aggregated by hour of day"
+    columns:
+      - name: hour_of_day
+        description: "Hour of day (0-23)"
+        tests:
+          - not_null
+          - unique
+      - name: total_trips
+        description: "Total number of trips during that hour"
+      - name: avg_fare
+        description: "Average base fare in USD"
+
+  - name: trips_by_payment
+    description: "Trip counts and average tip percentage by payment type"
+    columns:
+      - name: payment_type
+        tests:
+          - not_null
+          - unique
+      - name: total_trips
+        description: "Total number of trips using this payment method"
+      - name: avg_tip_pct
+        description: "Average tip as a percentage of the base fare"
