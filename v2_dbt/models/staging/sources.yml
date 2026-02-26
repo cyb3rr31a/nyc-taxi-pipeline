@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: nyc_taxi
+    dataset: nyc_taxi
+    tables:
+      - name: trips_raw
